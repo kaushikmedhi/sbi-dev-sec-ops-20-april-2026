@@ -40,33 +40,46 @@ public class OpenApiConfig {
                         .title(appName + " — REST API")
                         .version(appVersion)
                         .description(
-                            "**SBI Loan Management System** REST API\n\n"
-                            + "DevSecOps Training Project — State Bank of India\n\n"
-                            + "---\n\n"
-                            + "### How to Authenticate\n\n"
-                            + "1. Expand **Authentication** below → `POST /api/v1/auth/login`\n"
-                            + "2. Click **Try it out** → fill in username and password → **Execute**\n"
-                            + "3. Copy the `token` value from the response body\n"
-                            + "4. Click **Authorize** (top right) → paste the token → **Authorize**\n\n"
-                            + "---\n\n"
-                            + "### Training Accounts\n\n"
-                            + "| Username | Password | Role | Access Level |\n"
-                            + "|---|---|---|---|\n"
-                            + "| `admin@sbi.com` | `Admin@123` | ADMIN | Full access — all operations |\n"
-                            + "| `officer@sbi.com` | `Officer@123` | USER | Read + own records only |\n\n"
-                            + "---\n\n"
-                            + "### Known Issues (Pre-Training — Fix During Labs)\n\n"
-                            + "| # | Endpoint | Issue | Lab |\n"
-                            + "|---|---|---|---|\n"
-                            + "| 1 | `POST /api/v1/auth/login` | Credentials sent as query params — logged in URLs | Lab 1 |\n"
-                            + "| 2 | `GET /api/v1/applications` | Returns raw entity — sensitive fields exposed to all users | Lab 1 |\n"
-                            + "| 3 | `GET /api/v1/applications/search` | SQL injection via branch name parameter | Lab 2 |\n"
-                            + "| 4 | All write endpoints | No `@PreAuthorize` — any user can create/update/delete | Lab 1 |\n\n"
-                            + "---\n\n"
-                            + "> ⚠️ **Swagger UI is disabled in production** "
-                            + "(`springdoc.swagger-ui.enabled=false` in `application-prod.properties`). "
-                            + "Swagger documents every endpoint and parameter — "
-                            + "leaving it on in production gives attackers a complete API map."
+                        """
+                                **SBI Loan Management System** REST API
+
+                                DevSecOps Training Project — State Bank of India
+
+                                ---
+
+                                ### How to Authenticate
+
+                                1. Expand **Authentication** below → `POST /api/v1/auth/login`
+                                2. Click **Try it out** → fill in username and password → **Execute**
+                                3. Copy the `token` value from the response body
+                                4. Click **Authorize** (top right) → paste the token → **Authorize**
+
+                                ---
+
+                                ### Training Accounts
+
+                                | Username | Password | Role | Access Level |
+                                |---|---|---|---|
+                                | `admin@sbi.com` | `Admin@123` | ADMIN | Full access — all operations |
+                                | `officer@sbi.com` | `Officer@123` | USER | Read + own records only |
+
+                                ---
+
+                                ### Known Issues (Pre-Training — Fix During Labs)
+
+                                | # | Endpoint | Issue | Lab |
+                                |---|---|---|---|
+                                | 1 | `POST /api/v1/auth/login` | Credentials sent as query params — logged in URLs | Lab 1 |
+                                | 2 | `GET /api/v1/applications` | Returns raw entity — sensitive fields exposed to all users | Lab 1 |
+                                | 3 | `GET /api/v1/applications/search` | SQL injection via branch name parameter | Lab 2 |
+                                | 4 | All write endpoints | No `@PreAuthorize` — any user can create/update/delete | Lab 1 |
+
+                                ---
+
+                                > ⚠️ **Swagger UI is disabled in production**
+                                (`springdoc.swagger-ui.enabled=false` in `application-prod.properties`).
+                                Swagger documents every endpoint and parameter —
+                                leaving it on in production gives attackers a complete API map."""
                         )
                         .contact(new Contact()
                                 .name("SBI Technology Training Team")
